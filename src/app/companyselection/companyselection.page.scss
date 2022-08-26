@@ -1,0 +1,13 @@
+ion-content.background-cover {
+  --background: url("../../assets/imgs/background5.jpg") no-repeat 0 0/100% 100%;
+  --background-size: contain;
+  --background-position: center;
+  //filter: blur(1px);
+  // opacity: 0.7;
+}
+.firmlogo {
+  img {
+    padding: 0 30%;
+    opacity: 1 !important;
+  }
+}

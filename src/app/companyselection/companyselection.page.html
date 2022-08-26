@@ -1,0 +1,29 @@
+<ion-content class="background-cover">
+  <div class="d-flex flex-column justify-content-center" style="height: 90%;">
+    <div class="firmlogo my-4">
+      <img src="/assets/imgs/logo_nyx.svg">
+    </div>
+    <div class="card p-2 mx-3">
+      <form [formGroup]="companyForm">
+        <ion-item class="mb-3">
+          <ion-label position="stacked">Şirket</ion-label>
+          <ion-select okText="Seç" cancelText="İptal" placeholder="Seçiniz" formControlName="companyName">
+            <ion-select-option *ngFor="let company of companyOptions" [value]="company.id">
+              {{company.companyName}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="mb-3">
+          <ion-label position="stacked">Dönem</ion-label>
+          <ion-select okText="Seç" cancelText="İptal" placeholder="Seçiniz" formControlName="companyPeriod">
+            <ion-select-option *ngFor="let period of companyPeriod" [value]="period">
+              {{period}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button [disabled]="companyForm.get('companyName').invalid || companyForm.get('companyPeriod').invalid"
+          class="mb-3" expand="block" color="tertiary" (click)="login()">Tamam</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -17,4 +17,32 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
-</ion-content>
+</ion-content> -->
+<ion-split-pane contentId="main-content">
+  <ion-menu mode="ios" contentId="main-content" type="overlay">
+    <ion-content>
+      <ion-list class="ion-no-padding" id="inbox-list">
+        <!-- <ion-avatar class="ion-margin-start ios hydrated mb-2"><img alt="img" src="assets/user.jpg"></ion-avatar>
+        <ion-list-header *ngIf="gid.customer.name" class="mb-2">{{gid.customer.name}} {{gid.customer.surname}}
+        </ion-list-header>
+        <ion-list-header *ngIf="!gid.customer.name" class="mb-2">Misafir</ion-list-header> -->
+        <div class="headermenu d-flex flex-column align-items-center mb-4">
+          <div class="firm-logo mt-4">
+            <img src="/assets/imgs/logo_nyx.svg" />
+          </div>
+          <!-- <ion-list-header class="ion-text-center">{{gid.appName}}</ion-list-header> -->
+          <div class="ion-text-center appName font-weight-normal mb-5 mt-3 px-5">
+            Miray Adar</div>
+        </div>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
+            detail="false" [class.selected]="selectedIndex == i">
+            <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-split-pane>
