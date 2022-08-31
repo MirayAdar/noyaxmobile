@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <!-- <ion-buttons slot="start">
+      <ion-back-button color="primary" text=""></ion-back-button>
+
+    </ion-buttons> -->
+    <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    <ion-title>
+      <div>
+        <img style="width: 85px" src="assets/imgs/logo_nyx.svg">
+      </div>
+    </ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let menu of appPages" size="6">
+        <div style="height: 160px;" class="card d-flex flex-column align-items-center justify-content-center"
+          [routerLink]="['/menu.url']">
+          <ion-icon color="primary" size="large" [name]="menu.icon"></ion-icon>
+          <div>{{menu.title}}</div>
+          <p style="font-size: 0.9rem; color: gray;" class="ion-text-center">{{menu.description}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

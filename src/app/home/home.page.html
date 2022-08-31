@@ -1,11 +1,11 @@
 <!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Deneme
     </ion-title>
   </ion-toolbar>
-</ion-header>
-
+</ion-header> -->
+<!--
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -24,16 +24,19 @@
       <ion-list class="ion-no-padding" id="inbox-list">
         <!-- <ion-avatar class="ion-margin-start ios hydrated mb-2"><img alt="img" src="assets/user.jpg"></ion-avatar>
         <ion-list-header *ngIf="gid.customer.name" class="mb-2">{{gid.customer.name}} {{gid.customer.surname}}
-        </ion-list-header>
-        <ion-list-header *ngIf="!gid.customer.name" class="mb-2">Misafir</ion-list-header> -->
+        </ion-list-header> -->
+
+
         <div class="headermenu d-flex flex-column align-items-center mb-4">
           <div class="firm-logo mt-4">
-            <img src="/assets/imgs/logo_nyx.svg" />
+            <img style="padding: 0 30%" src="/assets/imgs/logo_nyx.svg" />
           </div>
-          <!-- <ion-list-header class="ion-text-center">{{gid.appName}}</ion-list-header> -->
+
           <div class="ion-text-center appName font-weight-normal mb-5 mt-3 px-5">
             Miray Adar</div>
         </div>
+
+
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
           <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
             detail="false" [class.selected]="selectedIndex == i">

@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
   login(){
     if(this.signupForm.valid){
       this.loadingCtrl.create({
-        message: "Login işlemi başarılı"
+        message: "Giriş Başarılı"
       }).then(loading => {
         loading.present();
         setTimeout(() => {

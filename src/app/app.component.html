@@ -1,3 +1,55 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content">
+    <ion-menu mode="ios" contentId="main-content" type="overlay">
+      <!-- <ion-header>
+        <ion-toolbar>
+          <ion-title>Noyax Enterprise</ion-title>
+        </ion-toolbar>
+      </ion-header> -->
+      <ion-content>
+        <ion-list class="ion-no-padding" id="inbox-list">
+          <!-- <ion-avatar class="ion-margin-start ios hydrated mb-2"><img alt="img" src="assets/user.jpg"></ion-avatar>
+          <ion-list-header *ngIf="gid.customer.name" class="mb-2">{{gid.customer.name}} {{gid.customer.surname}}
+          </ion-list-header> -->
+
+
+          <div class="headermenu d-flex mb-4">
+            <!-- <div class="firm-logo mt-4">
+              <img style="padding: 0 30%" src="/assets/imgs/logo_nyx.svg" />
+            </div> -->
+
+            <!-- <ion-icon style="position: absolute; right: 0; top: 0;
+            --ionicon-stroke-width: 50px;
+            width: 35px;
+            height: 20px;" class="pt-2" color="light" size="default" slot="end" name="refresh-outline"></ion-icon> -->
+
+            <div style="margin: 0 1rem;
+            background-color: #fff;
+            border-radius: 100%;
+            padding: 12px;" class="circleName ">
+              <h3 style="margin: 0 !important; font-weight: bolder;
+              font-family: auto;
+              font-size: 1.8rem; ">{{customerName.charAt(0)}}</h3>
+            </div>
+            <div style="line-height: 22px;">
+              <div class="appName" style="font-weight: 600; font-size: 1.1rem;">
+                {{customerName}}</div>
+              <p style="color: #fff; font-size: 0.9rem; margin-bottom: 0 !important;">Sistem Yöneticisi</p>
+            </div>
+          </div>
+
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="inset"
+              detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
 </ion-app>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HomePageRoutingModule } from './home-routing.module';
 
 
@@ -14,6 +14,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
+  providers: [StatusBar],
   declarations: [HomePage]
 })
 export class HomePageModule {}

@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-
-  constructor() {}
+export class HomePage implements OnInit {
+  public selectedIndex = 0;
+  canShowSetting:boolean;
+  constructor(private platform: Platform,  private statusBar: StatusBar) {}
   public appPages = [
     {
       title: 'Ana sayfa',
@@ -15,29 +18,83 @@ export class HomePage {
       icon: 'home'
     },
     {
-      title: 'Cariler',
-      url: '/shoppingcart',
-      icon: 'basket'
-    },
-    {
       title: 'Ayarlar',
-      url: '/myprofile',
+      url: '/..',
       icon: 'person'
     },
     {
-      title: 'Hakkımızda',
-      url: '/about',
-      icon: 'heart'
+      title:'İşlemler',
+      url:'/home/dashboard',
+      icon: 'clipboard'
     },
     {
-      title: 'İletişim',
-      url: '/contactus',
-      icon: 'mail'
-    },
-    {
-      title: 'SSS',
-      url: '/faq',
-      icon: 'help'
+      title:'Menu Değiştir',
+      url:'/..',
+      icon:'menu'
     }
+    // {
+    //   title: 'Cariler',
+    //   url: '/..',
+    //   icon: 'basket'
+    // },
+    // {
+    //   title: 'Ürünler',
+    //   url: '/about',
+    //   icon: 'heart'
+    // },
+    // {
+    //   title: 'Teklifler',
+    //   url: '/contactus',
+    //   icon: 'mail'
+    // },
+    // {
+    //   title: 'Faturalar',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Tahsilatlar',
+    //   url: '/about',
+    //   icon: 'heart'
+    // },
+    // {
+    //   title: 'Masraflar',
+    //   url: '/contactus',
+    //   icon: 'mail'
+    // },
+    // {
+    //   title: 'Raporlar',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Aktiviteler',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Barkod Listeleri',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Sipariş Ürünleri Toplama',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+
   ];
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      //this.splashScreen.hide();
+    });
+  }
+
+  ngOnInit(){
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+  }
 }
