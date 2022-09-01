@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Ana sayfa',
-      url: '/folder/Inbox',
+      url: '/home/dashboard',
       icon: 'home'
     },
     {
@@ -72,7 +72,11 @@ export class AppComponent implements OnInit {
     {
       title: 'Raporlar',
       url: '/faq',
-      icon: 'help'
+      icon: 'help',
+      submenu: [{
+        subtitle: 'Cari Bakiyeleri',
+        url: '/cari',
+      }]
     },
     {
       title: 'Aktiviteler',

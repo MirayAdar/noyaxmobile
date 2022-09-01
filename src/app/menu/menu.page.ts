@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { SubmenuModalComponent } from '../submenu-modal/submenu-modal.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  constructor( private modalCtrl: ModalController,private routerOutlet: IonRouterOutlet, private router: Router) { }
 
   ngOnInit() {
+
+  }
+  async menuDetail(menu){
+    if(menu.submenu){
+    const modal = await this.modalCtrl.create({
+     component: SubmenuModalComponent,
+     componentProps: {
+       submenu : menu.submenu
+     },
+     presentingElement: this.routerOutlet.nativeEl,
+     mode:'ios'
+    })
+    await modal.present();
+   }
+   else{
+   this.router.navigate(['/menu.url']);
+   }
   }
   public appPages = [
     // {
@@ -78,7 +98,14 @@ export class MenuPage implements OnInit {
       title: 'Raporlar',
       url: '/faq',
       icon: 'help',
-      description: 'Cari bayileri, stok durumu vb raporlarınızı alın'
+      description: 'Cari bayileri, stok durumu vb raporlarınızı alın',
+      submenu: [{
+        subtitle: 'Cari Bakiyeleri',
+        url: '/cari',
+      },
+       {subtitle: 'Stok Durumu',
+        url:'/stocks'}
+    ]
     },
     {
       title: 'Aktiviteler',
@@ -100,4 +127,6 @@ export class MenuPage implements OnInit {
     },
 
   ];
+
+
 }
