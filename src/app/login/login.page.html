@@ -12,21 +12,21 @@
     </div>
     <div class="card p-2 mx-3">
       <form [formGroup]="signupForm">
-        <ion-item>
+        <ion-item mode="md">
           <ion-label position="stacked">
             Kullanıcı Adı
           </ion-label>
           <ion-input formControlName="userName"></ion-input>
         </ion-item>
-        <ion-item class="mb-4">
+        <ion-item mode="md" class="mb-4">
           <ion-label position="stacked">
             Şifre
           </ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
         <ion-item class="mb-3">
-          <ion-label position="stacked">Hatırlatma Seçenekleri</ion-label>
-          <ion-select okText="Seç" cancelText="İptal" placeholder="Seçiniz">
+          <ion-label style="font-size: 16px;" position="stacked">Hatırlatma Seçenekleri</ion-label>
+          <ion-select style="font-size: 14px;" okText="Seç" cancelText="İptal" placeholder="Seçiniz">
             <ion-select-option *ngFor="let reminder of reminderOptions" [value]="reminder.id">
               {{reminder.reminderInfo}}
             </ion-select-option>

@@ -33,66 +33,66 @@ export class AppComponent implements OnInit {
       url:'/..',
       icon:'menu'
     },
-    // {
-    //   title: 'Çıkış Yap',
-    //   url:'/login',
-    //   icon:'log-out'
+    {
+      title: 'Çıkış Yap',
+      url:'/login',
+      icon:'log-out'
 
-    // }
-    {
-      title: 'Cariler',
-      url: '/..',
-      icon: 'basket'
-    },
-    {
-      title: 'Ürünler',
-      url: '/about',
-      icon: 'heart'
-    },
-    {
-      title: 'Teklifler',
-      url: '/contactus',
-      icon: 'mail'
-    },
-    {
-      title: 'Faturalar',
-      url: '/faq',
-      icon: 'help'
-    },
-    {
-      title: 'Tahsilatlar',
-      url: '/about',
-      icon: 'heart'
-    },
-    {
-      title: 'Masraflar',
-      url: '/contactus',
-      icon: 'mail'
-    },
-    {
-      title: 'Raporlar',
-      url: '/faq',
-      icon: 'help',
-      submenu: [{
-        subtitle: 'Cari Bakiyeleri',
-        url: '/cari',
-      }]
-    },
-    {
-      title: 'Aktiviteler',
-      url: '/faq',
-      icon: 'help'
-    },
-    {
-      title: 'Barkod Listeleri',
-      url: '/faq',
-      icon: 'help'
-    },
-    {
-      title: 'Sipariş Ürünleri Toplama',
-      url: '/faq',
-      icon: 'help'
-    },
+    }
+    // {
+    //   title: 'Cariler',
+    //   url: '/..',
+    //   icon: 'basket'
+    // },
+    // {
+    //   title: 'Ürünler',
+    //   url: '/about',
+    //   icon: 'heart'
+    // },
+    // {
+    //   title: 'Teklifler',
+    //   url: '/contactus',
+    //   icon: 'mail'
+    // },
+    // {
+    //   title: 'Faturalar',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Tahsilatlar',
+    //   url: '/about',
+    //   icon: 'heart'
+    // },
+    // {
+    //   title: 'Masraflar',
+    //   url: '/contactus',
+    //   icon: 'mail'
+    // },
+    // {
+    //   title: 'Raporlar',
+    //   url: '/faq',
+    //   icon: 'help',
+    //   submenu: [{
+    //     subtitle: 'Cari Bakiyeleri',
+    //     url: '/cari',
+    //   }]
+    // },
+    // {
+    //   title: 'Aktiviteler',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Barkod Listeleri',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
+    // {
+    //   title: 'Sipariş Ürünleri Toplama',
+    //   url: '/faq',
+    //   icon: 'help'
+    // },
 
   ];
   initializeApp() {

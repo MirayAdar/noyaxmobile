@@ -22,7 +22,7 @@
           </ion-select>
         </ion-item>
         <ion-button [disabled]="companyForm.get('companyName').invalid || companyForm.get('companyPeriod').invalid"
-          class="mb-3" expand="block" color="tertiary" (click)="login()">Tamam</ion-button>
+          class="mb-3" expand="block" color="tertiary" [routerLink]="['/home/dashboard']">Tamam</ion-button>
       </form>
     </div>
   </div>

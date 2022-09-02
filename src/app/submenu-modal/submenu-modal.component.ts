@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -8,12 +9,13 @@ import { ModalController } from '@ionic/angular';
 })
 export class SubmenuModalComponent implements OnInit {
 @Input() submenu : any[];
-  constructor(private modalCtrl : ModalController) { }
-  closeNotifyModal() {
-    this.modalCtrl.dismiss();
-   }
+  constructor(public modalCtrl : ModalController, private router: Router) { }
+
   ngOnInit() {
     console.log(this.submenu);
   }
-
+  forwardSubmenu(submenu){
+     this.router.navigate([submenu.url]);
+     this.modalCtrl.dismiss();
+  }
 }

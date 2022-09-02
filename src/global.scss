@@ -27,14 +27,34 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .small-modal {
-  // &::part(backdrop){
-  //   background-color: darkgray;   //aşağıdakiyle aynı işlev
+  //&::part(backdrop) {
+  // background-color: red; //aşağıdakiyle aynı işlev
   // }
-  // --ion-backdrop-color: darkgray; modalin arkasındaki renk
+  //--ion-backdrop-color: red; modalin arkasındaki renk
   &::part(content) {
     width: 80%;
     height: 50%;
     margin: auto;
     border-radius: 10px;
   }
+}
+
+.alert-radio-label.sc-ion-alert-md {
+  padding-left: unset;
+  padding-right: unset;
+  -webkit-padding-start: 32px;
+  padding-inline-start: 32px;
+  -webkit-padding-end: 10px;
+  padding-inline-end: 10px;
+  white-space: pre-line;
+}
+
+.alert-radio-label.sc-ion-alert-ios {
+  padding-left: unset;
+  padding-right: unset;
+  -webkit-padding-start: 13px;
+  padding-inline-start: 13px;
+  -webkit-padding-end: 13px;
+  padding-inline-end: 5px;
+  white-space: pre-line;
 }

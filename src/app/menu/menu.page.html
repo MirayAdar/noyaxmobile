@@ -19,10 +19,12 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let menu of appPages" size="6">
-        <div style="height: 160px; box-shadow: rgb(17 17 26 / 10%) 0px 4px 16px, rgb(17 17 26 / 5%) 0px 8px 32px;"
-          class="card d-flex flex-column align-items-center justify-content-center">
-          <ion-icon color="primary" size="large" [name]="menu.icon"></ion-icon>
-          <div (click)="menuDetail(menu)" class="ion-text-center">{{menu.title}}</div>
+        <div (click)="menuDetail(menu)"
+          style="height: 160px; box-shadow: rgb(17 17 26 / 10%) 0px 4px 16px, rgb(17 17 26 / 5%) 0px 8px 32px; padding-top: 2rem;"
+          class="card d-flex flex-column align-items-center">
+          <!-- <ion-icon color="primary" size="large" [name]="menu.icon"></ion-icon> -->
+          <img [src]="menu.icon">
+          <div class="ion-text-center">{{menu.title}}</div>
           <!-- <span>
             <ion-icon name=""></ion-icon>
           </span> -->
@@ -31,7 +33,7 @@
               <ion-item slot="header" color="light">
                 <ion-label>{{menu.title}}</ion-label>
               </ion-item>
-              <div *ngFor="let m of menu.submenu" [routerLink]="['/m.url']" class="ion-padding" slot="content">
+              <div *ngFor="let m of menu.submenu" [routerLink]="[m.url]" class="ion-padding" slot="content">
                 {{m.subtitle}}
               </div>
             </ion-accordion>

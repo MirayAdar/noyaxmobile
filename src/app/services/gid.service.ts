@@ -1,37 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { IonRouterOutlet, ModalController } from '@ionic/angular';
-import { SubmenuModalComponent } from '../submenu-modal/submenu-modal.component';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-menu',
-  templateUrl: './menu.page.html',
-  styleUrls: ['./menu.page.scss'],
+@Injectable({
+  providedIn: 'root'
 })
-export class MenuPage implements OnInit {
-
-  constructor( private modalCtrl: ModalController,private routerOutlet: IonRouterOutlet, private router: Router) { }
-
-  ngOnInit() {
-
-  }
-  async menuDetail(menu){
-    if(menu.submenu){
-    const modal = await this.modalCtrl.create({
-     component: SubmenuModalComponent,
-     componentProps: {
-       submenu : menu.submenu
-     },
-     presentingElement: this.routerOutlet.nativeEl,
-     mode:'ios',
-     cssClass: 'small-modal'
-    })
-    await modal.present();
-   }
-   else{
-   this.router.navigate([menu.url]);
-   }
-  }
+export class GidService {
   public appPages = [
     // {
     //   title: 'Ana sayfa',
@@ -143,6 +115,5 @@ export class MenuPage implements OnInit {
     },
 
   ];
-
-
+  constructor() { }
 }

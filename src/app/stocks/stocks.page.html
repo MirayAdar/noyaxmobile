@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Stok Durumu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-breadcrumbs class="ion-no-padding" color="primary">
+    <ion-breadcrumb href="/home/dashboard">Anasayfa</ion-breadcrumb>
+    <ion-breadcrumb href="/menu">Menü</ion-breadcrumb>
+    <ion-breadcrumb (click)="forwardsubMenus()">Raporlar</ion-breadcrumb>
+    <ion-breadcrumb href="/stocks">Stok Durumu</ion-breadcrumb>
+  </ion-breadcrumbs>
+</ion-content>

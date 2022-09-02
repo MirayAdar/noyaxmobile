@@ -1,3 +1,22 @@
-<p *ngFor="let sub of submenu">
-  {{sub.subtitle}}
-</p>
+<ion-content>
+
+  <ion-icon class="ion-margin" style="position:absolute; right: 0;" size="large" name="close-circle" color="medium"
+    (click)="modal.dismiss()"></ion-icon>
+  <!-- <p *ngFor="let sub of submenu">
+    {{sub.subtitle}}
+  </p> -->
+  <ion-grid>
+    <ion-row class="mt-5">
+      <ion-col size="4" *ngFor="let sub of submenu">
+        <div class="card d-flex flex-column align-items-center justify-content-center p-3 "
+          style="height: 100px; border: 0.5px solid rgba(53, 101, 255, 0.3); box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;"
+          (click)="forwardSubmenu(sub)">
+          <ion-icon style="font-size: 1.5rem;" color="primary" [name]="sub.iconName">
+          </ion-icon>
+          <div class="ion-text-center mt-2" style="line-height: 18px; font-size: 14px;">{{sub.subtitle}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
