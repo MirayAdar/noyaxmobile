@@ -1,9 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content class="background-cover">
   <div class="d-flex flex-column justify-content-center" style="height: 90%;">
     <div class="firmlogo my-4">
@@ -24,17 +18,17 @@
           </ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
-        <ion-item class="mb-3">
-          <ion-label style="font-size: 16px;" position="stacked">Hatırlatma Seçenekleri</ion-label>
+        <ion-item lines="full" class="mb-3">
+          <ion-label mode="md" position="stacked">Hatırlatma Seçenekleri</ion-label>
           <ion-select style="font-size: 14px;" okText="Seç" cancelText="İptal" placeholder="Seçiniz">
             <ion-select-option *ngFor="let reminder of reminderOptions" [value]="reminder.id">
               {{reminder.reminderInfo}}
             </ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-button [disabled]="signupForm.get('userName').invalid || signupForm.get('password').invalid" class="mb-3"
-          expand="block" color="tertiary" (click)="login()">GİRİŞ YAP</ion-button>
-        <ion-button expand="block" color="success">ÜCRETSİZ DENE</ion-button>
+        <ion-button mode="md" [disabled]="signupForm.get('userName').invalid || signupForm.get('password').invalid"
+          class="mb-3" expand="block" color="tertiary" (click)="login()">GİRİŞ YAP</ion-button>
+        <ion-button mode="md" expand="block" color="success">ÜCRETSİZ DENE</ion-button>
         <h4 class="forgot" (click)="forgotpassword()">Giriş Bilgilerimi Unuttum</h4>
       </form>
     </div>
