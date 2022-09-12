@@ -8,10 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-breadcrumbs class="ion-no-padding" color="primary">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a style="margin:5px;" href="/home/dashboard">Anasayfa</a></li>
+      <li class="breadcrumb-item"><a href="/menu">Menü</a></li>
+      <li class="breadcrumb-item">
+        <a class="text-primary text-decoration-underline" [routerLink]="" (click)="forwardsubMenus()">Raporlar</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Stok Durumu</li>
+    </ol>
+  </nav>
+  <!-- <ion-breadcrumbs class="ion-no-padding" color="primary">
     <ion-breadcrumb href="/home/dashboard">Anasayfa</ion-breadcrumb>
     <ion-breadcrumb href="/menu">Menü</ion-breadcrumb>
     <ion-breadcrumb (click)="forwardsubMenus()">Raporlar</ion-breadcrumb>
     <ion-breadcrumb href="/stocks">Stok Durumu</ion-breadcrumb>
-  </ion-breadcrumbs>
+  </ion-breadcrumbs> -->
 </ion-content>

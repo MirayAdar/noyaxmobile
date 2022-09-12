@@ -18,7 +18,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let menu of appPages" size="6">
+      <ion-col *ngFor="let menu of this.gid.menuPages" size="6">
         <div (click)="menuDetail(menu)"
           style="height: 160px; box-shadow: rgb(17 17 26 / 10%) 0px 4px 16px, rgb(17 17 26 / 5%) 0px 8px 32px; padding-top: 2rem;"
           class="card d-flex flex-column align-items-center">

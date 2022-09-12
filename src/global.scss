@@ -58,3 +58,8 @@
   padding-inline-end: 5px;
   white-space: pre-line;
 }
+a.breadcrumb-native {
+  &::part {
+    padding-inline: 0 !important;
+  }
+}

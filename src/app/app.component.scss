@@ -28,10 +28,7 @@ ion-menu.md ion-list#inbox-list ion-list-header {
 
   min-height: 20px;
 }
-.appName {
-  color: var(--ion-color-primary-contrast);
-  font-size: 1.2rem;
-}
+
 ion-menu.md ion-list#labels-list ion-list-header {
   font-size: 16px;
 
@@ -118,64 +115,80 @@ ion-item.selected {
 }
 
 .headermenu {
-  // background: var(--ion-color-primary);
-  // border-radius: 0 0 50% 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background: linear-gradient(-45deg, #5ed523, #359aff, #3565ff);
-  background-size: 300% 300%;
-  animation: gradient 11s ease infinite;
+  background: linear-gradient(
+    -45deg,
+    rgba(85, 238, 192, 1) 0%,
+    rgba(53, 154, 255, 1) 50%,
+    rgba(53, 101, 255, 1) 100%
+  );
+  //background: linear-gradient(-45deg, #93f9bc, #55eec0, #359aff, #3565ff);
+  //background-size: 300% 300%;
+  //animation: gradient 11s ease infinite;
   border-radius: 0 0 10% 10%;
-  padding: 40px 0;
-  align-items: center;
-  .circleName {
+  padding: 35px 0;
+  align-items: flex-start;
+  &-left {
+    margin: 0 1rem;
+    background-color: #fff;
+    border-radius: 100%;
+    padding: 12px;
     //background-size: 300% 300%;
     h3 {
-      animation: color-change 11s ease infinite;
+      margin: 0 !important;
+      font-weight: bolder;
+      font-family: auto;
+      font-size: 1.8rem;
+      color: #3565ff;
+      //animation: color-change 11s ease infinite;
       //color: var(--ion-color-primary);
     }
   }
-}
-.logout {
-  position: absolute;
-  bottom: 0;
-  background-color: var(--ion-color-primary);
-  color: var(--ion-color-light);
-  width: 100%;
-  border-radius: 40% 40% 0 0;
+  &-right {
+    line-height: 22px;
+    .customerName {
+      color: var(--ion-color-primary-contrast);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    p {
+      color: var(--ion-color-light);
+      font-size: 0.8rem;
+    }
+  }
 }
 ion-list {
   padding: 0 !important;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes color-change {
-  100% {
-    color: #3565ff;
-  }
-  80% {
-    color: #359aff;
-  }
-  60% {
-    color: #02c998;
-  }
-  40% {
-    color: #02c998;
-  }
-  20% {
-    color: #359aff;
-  }
-  0% {
-    color: #3565ff;
-  }
-}
+// @keyframes gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
+// @keyframes color-change {
+//   100% {
+//     color: #3565ff;
+//   }
+//   80% {
+//     color: #359aff;
+//   }
+//   60% {
+//     color: #02c998;
+//   }
+//   40% {
+//     color: #02c998;
+//   }
+//   20% {
+//     color: #359aff;
+//   }
+//   0% {
+//     color: #3565ff;
+//   }
+// }

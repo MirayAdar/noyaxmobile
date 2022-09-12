@@ -33,12 +33,12 @@ export class AppComponent implements OnInit {
       url:'/..',
       icon:'menu'
     },
-    // {
-    //   title: 'Çıkış Yap',
-    //   url:'/login',
-    //   icon:'log-out'
+    {
+      title: 'Çıkış Yap',
+      url:'/login',
+      icon:'log-out'
 
-    // }
+    }
     // {
     //   title: 'Cariler',
     //   url: '/..',

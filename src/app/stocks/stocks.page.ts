@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { GidService } from '../services/gid.service';
 import { SubmenuModalComponent } from '../submenu-modal/submenu-modal.component';
 
 @Component({
@@ -9,17 +10,19 @@ import { SubmenuModalComponent } from '../submenu-modal/submenu-modal.component'
 })
 export class StocksPage  {
 
-  constructor(private modalCtrl: ModalController, private routerOutlet: IonRouterOutlet) { }
+  constructor( public gid: GidService) {}
 
   async forwardsubMenus(){
-    const modal =  await this.modalCtrl.create({
-      component: SubmenuModalComponent,
-      cssClass: 'small-modal',
-      presentingElement: this.routerOutlet.nativeEl,
-      mode:'ios',
-    })
-    await modal.present();
+    this.gid.callSubmenuModal(this.gid.menuPages.find(a=> a.title == "Raporlar"));
+    // const modal =  await this.modalCtrl.create({
+    //   component: SubmenuModalComponent,
+    //   cssClass: 'small-modal',
+    //   presentingElement: this.routerOutlet.nativeEl,
+    //   mode:'ios',
+    // })
+    // await modal.present();
   }
+
 
 
 }

@@ -13,28 +13,19 @@
           </ion-list-header> -->
 
 
-          <div class="headermenu d-flex mb-5">
-            <!-- <div class="firm-logo mt-4">
-              <img style="padding: 0 30%" src="/assets/imgs/logo_nyx.svg" />
-            </div> -->
-
+          <div class="headermenu d-flex mb-4">
             <!-- <ion-icon style="position: absolute; right: 0; top: 0;
             --ionicon-stroke-width: 50px;
             width: 35px;
             height: 20px;" class="pt-2" color="light" size="default" slot="end" name="refresh-outline"></ion-icon> -->
-
-            <div style="margin: 0 1rem;
-            background-color: #fff;
-            border-radius: 100%;
-            padding: 12px;" class="circleName ">
-              <h3 style="margin: 0 !important; font-weight: bolder;
-              font-family: auto;
-              font-size: 1.8rem; ">{{customerName.charAt(0)}}</h3>
+            <div class="headermenu-left">
+              <h3>{{customerName.charAt(0)}}</h3>
             </div>
-            <div style="line-height: 22px;">
-              <div class="appName" style="font-weight: 600; font-size: 1.1rem;">
+            <div class="headermenu-right">
+              <div class="customerName">
                 {{customerName}}</div>
-              <p style="color: #fff; font-size: 0.9rem; margin-bottom: 0 !important;">Sistem Yöneticisi</p>
+              <p style="font-size: 0.9rem !important; margin-bottom: 0 !important;">Sistem Yöneticisi</p>
+              <p>(Elron Yazılım LTD. ŞTİ. 2022)</p>
             </div>
           </div>
 
@@ -47,7 +38,7 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-        <div class="logout" [routerLink]="['/login']">Çıkış Yap</div>
+        <!-- <div class="logout" [routerLink]="['/login']">Çıkış Yap</div> -->
       </ion-content>
     </ion-menu>
 

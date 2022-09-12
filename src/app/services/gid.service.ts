@@ -1,36 +1,13 @@
 import { Injectable } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { SubmenuModalComponent } from '../submenu-modal/submenu-modal.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GidService {
-  public appPages = [
-    // {
-    //   title: 'Ana sayfa',
-    //   url: '/folder/Inbox',
-    //   icon: 'home'
-    // },
-    // {
-    //   title: 'Ayarlar',
-    //   url: '/..',
-    //   icon: 'person'
-    // },
-    // {
-    //   title:'İşlemler',
-    //   url:'/home/dashboard',
-    //   icon: 'clipboard'
-    // },
-    // {
-    //   title:'Menü Değiştir',
-    //   url:'/..',
-    //   icon:'menu'
-    // },
-    // {
-    //   title: 'Çıkış Yap',
-    //   url:'/login',
-    //   icon:'log-out'
-
-    // }
+  public menuPages = [
     {
       title: 'Cariler',
       url: '/..',
@@ -115,5 +92,18 @@ export class GidService {
     },
 
   ];
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
+
+ async callSubmenuModal(menu){
+  const modal = await this.modalCtrl.create({
+    component: SubmenuModalComponent,
+    componentProps: {
+      submenu : menu.submenu
+    },
+    //presentingElement: this.routerOutlet.nativeEl,
+    mode:'md',
+    cssClass: 'small-modal'
+   })
+   await modal.present();
+  }
 }
